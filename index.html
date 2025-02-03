@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light w-100 d-flex justify-content-between p-3">
+        <h3><i class="bi bi-instagram"></i> Instagram</h3>
+        <div>
+            <button class="btn btn-primary me-2" onclick="openPostModal()">+ Crear nuevo post</button>
+            <div class="dropdown d-inline">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    ☰
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li><a class="dropdown-item" href="#">Configuración</a></li>
+                    <li><a class="dropdown-item" href="#">Términos y Condiciones</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="buttons mt-3">
+        <button class="btn btn-outline-primary" onclick="showGrid()">Feed</button>
+        <button class="btn btn-outline-secondary" onclick="showColumn()">Posts</button>
+    </div>
+    
+    <div class="gallery mt-3">
+        <img src="https://www.turismodecordoba.org/archivos/2019/201905141326280000001557833188.0308.jpg" alt="Mezquita 1">
+        <img src="https://www.visitanddo.com/wp-content/uploads/2023/02/mezquita-cordoba-1024x577.jpg.webp" alt="Mezquita 2">
+        <img src="https://www.turismodecordoba.org/archivos/2019/201905141328560000001557833336.4341.jpg" alt="Azahara">
+        <img src="https://cometeelmundo.net/sites/default/files/styles/max_900x900/public/media/blog/templo-romano-en-cordoba.jpg?itok=1KPuq3Hi" alt="Capitulares">
+        <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/01/18/istock-477572440.jpeg" alt="Torre">
+        <img src="https://cordobapie.es/wp-content/uploads/2023/06/alcazar.jpg" alt="Alcazar">
+        <img src="https://cometeelmundo.net/sites/default/files/styles/max_900x900/public/media/blog/plaza-de-la-corredera-de-cordoba.jpg?itok=q1L-B63H" alt="Corredera">
+        <img src="https://www2.ual.es/ideimand/wp-content/uploads/2018/01/fig1-6.jpg" alt="Puerta">
+        <img src="https://www.turismodecordoba.org/archivos/2020/202012011054350000001606816475.7382.jpg" alt="Tendillas">
+    </div>
+    
+    <div class="column-view mt-3">
+        <div class="post">
+            <h5>El Interior de la Mezquita</h5>
+            <p class="text-muted">31/01</p>
+            <img src="https://www.turismodecordoba.org/archivos/2019/201905141326280000001557833188.0308.jpg" alt="Mezquita 1">
+            <p><strong>204 Me gustas</strong></p>
+            <p>Las famosas columnas de la Mezquita Catedral de Córdoba</p>
+        </div>
+        <div class="post">
+            <h5>La Mezquita de Córdoba</h5>
+            <p class="text-muted">31/01</p>
+            <img src="https://www.visitanddo.com/wp-content/uploads/2023/02/mezquita-cordoba-1024x577.jpg.webp" alt="Mezquita 2">
+            <p><strong>180 Me gustas</strong></p>
+            <p>Increibles vistas de la Mezquita desde lejos.</p>
+        </div>
+        <div class="post">
+            <h5>Medina Azahara</h5>
+            <p class="text-muted">27/01</p>
+            <img src="https://www.turismodecordoba.org/archivos/2019/201905141328560000001557833336.4341.jpg" alt="Azahara">
+            <p><strong>174 Me gustas</strong></p>
+            <p>Visita a la ciudad de Medina Azahara</p>
+        </div>
+        <div class="post">
+            <h5>Ayuntamiento de Córdoba</h5>
+            <p class="text-muted">28/01</p>
+            <img src="https://cometeelmundo.net/sites/default/files/styles/max_900x900/public/media/blog/templo-romano-en-cordoba.jpg?itok=1KPuq3Hi" alt="Capitulares">
+            <p><strong>178 Me gustas</strong></p>
+            <p>Ruinas y pilares del Ayuntamiento de Córdoba</p>
+        </div>
+        <div class="post">
+            <h5>Campanario de San Rafael</h5>
+            <p class="text-muted">21/01</p>
+            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/01/18/istock-477572440.jpeg" alt="Torre">
+            <p><strong>199 Me gustas</strong></p>
+            <p>Se le conoce así, por la fígura del Arcangel San Rafael que corona el campanario.</p>
+        </div>
+        <div class="post">
+            <h5>El Alcazar</h5>
+            <p class="text-muted">29/01</p>
+            <img src="https://cordobapie.es/wp-content/uploads/2023/06/alcazar.jpg" alt="Alcazar">
+            <p><strong>201 Me gustas</strong></p>
+            <p>Ven a visitar el Alcazar de Córdoba, para una experiencia única.</p>
+        </div>
+        <div class="post">
+            <h5>Plaza de la Corredera</h5>
+            <p class="text-muted">29/01</p>
+            <img src="https://cometeelmundo.net/sites/default/files/styles/max_900x900/public/media/blog/plaza-de-la-corredera-de-cordoba.jpg?itok=q1L-B63H" alt="Corredera">
+            <p><strong>167 Me gustas</strong></p>
+            <p>¿A quién no le apetecería una cervecita al solecito en esta fantástica plaza?</p>
+        </div>
+        <div class="post">
+            <h5>La Puerta del Puente</h5>
+            <p class="text-muted">31/01</p>
+            <img src="https://www2.ual.es/ideimand/wp-content/uploads/2018/01/fig1-6.jpg" alt="Puerta">
+            <p><strong>189 Me gustas</strong></p>
+            <p>La antigua puerta de la ciudad</p>
+        </div>
+        <div class="post">
+            <h5>La Plaza de las Tendillas</h5>
+            <p class="text-muted">31/01</p>
+            <img src="https://www.turismodecordoba.org/archivos/2020/202012011054350000001606816475.7382.jpg" alt="Tendillas">
+            <p><strong>237 Me gustas</strong></p>
+            <p>Centro de la ciudad y donde pasan la mayoría de los transeuntes.</p>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postModalLabel">Crear nuevo post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="file" class="form-control mb-2" id="imageUpload">
+                    <textarea class="form-control" id="postCaption" placeholder="Escribe un pie de foto..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="createPost()">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
